@@ -42,12 +42,13 @@
 	<!--JavascriptFunctions.getJsConfirm(sessionContext)ntext) %>
 	// -->
 </SCRIPT>
+<!--  Modified by ASU on 12 Feb 2019 begins .This change was added to hide the attribute to the instructors-->
 	<style>
 .adminOptions {
-	display: none;
+	display:none;
 }
 </style>
-
+<!-- Modified by ASU on 12 Feb 2019 ends  -->
 	<html:form action="instructorAssignmentPref">
 		<html:hidden property="instructorId" />
 		<html:hidden property="name" />
@@ -66,9 +67,10 @@
 							title="<%=MSG.titleUpdatePreferences(MSG.accessUpdatePreferences())%>">
 							<loc:message name="actionUpdatePreferences" />
 						</html:submit>
-
+						<!-- Modified by ASU on 12 Feb 2019 begins  This change was added to hide the next and back buttons-->
 						<sec:authorize
 							access="hasPermission(#instructorId, 'DepartmentalInstructor', 'InstructorPreferences')">
+							<!-- Modified by ASU on 12 Feb 2019 ends-->
 							<logic:notEmpty name="<%=frmName%>" property="previousId">
 						&nbsp;
 						<html:submit property="op" styleClass="btn"
@@ -85,7 +87,9 @@
 									<loc:message name="actionNextInstructor" />
 								</html:submit>
 							</logic:notEmpty>
+							<!-- Modified by ASU on 12 Feb 2019 begins  This change was added to hide the next and back buttons-->
 						</sec:authorize>
+						<!-- Modified by ASU on 12 Feb 2019 ends-->
 					&nbsp;
 					<html:submit property="op" styleClass="btn"
 							accesskey="<%=MSG.accessBackToDetail()%>"
@@ -166,6 +170,7 @@
 					</div>
 				</logic:iterate>
 			</logic:notEmpty>
+			<!-- Modified by ASU on 12 Feb 2019 begins .This change was added to hide the attribute to the instructors-->
 			<sec:authorize
 				access="hasPermission(#instructorId, 'DepartmentalInstructor', 'InstructorPreferences')">
 				<script>
@@ -184,16 +189,19 @@
 		 			i=0;
 		 			for (i; i < x.length; i++) {
 						for(j=0; j < x[i].children.length ; j++){
-							if(x[i].children[j].className == "number of online couses"){
-								x[i].style.display = 'block';
+							if(x[i].children[j].className == "Online Courses #"){
+								x[i].style.display='block';
 							}
-							if(x[i].children[j].className == "Online Preference"){
-								x[i].style.display = 'block';
-							}
+							//if(x[i].children[j].className == "Online Course Preference"){
+								//x[i].style.visibility = 'visible';
+							//}else if(x[i].children[j].offsetLeft < 0){
+								//x[i].style.display='none';	
+							//}
 						}
 					}
 				})();
 		 	</script>
+		 	<!-- Modified by ASU on 12 Feb 2019 ends.-->
 			<!-- Preferences -->
 			<jsp:include page="preferencesEdit.jspf">
 				<jsp:param name="frmName" value="<%=frmName%>" />
@@ -217,8 +225,11 @@
 						styleClass="btn" accesskey="<%=MSG.accessUpdatePreferences()%>"
 						title="<%=MSG.titleUpdatePreferences(MSG.accessUpdatePreferences())%>">
 						<loc:message name="actionUpdatePreferences" />
-					</html:submit> <sec:authorize
+					</html:submit> 
+					<!-- Modified by ASU on 12 Feb 2019 begins  This change was added to hide the next and back buttons-->
+					<sec:authorize
 						access="hasPermission(#instructorId, 'DepartmentalInstructor', 'InstructorPreferences')">
+						<!-- Modified by ASU on 12 Feb 2019 ends-->
 						<logic:notEmpty name="<%=frmName%>" property="previousId">
 						&nbsp;
 						<html:submit property="op" styleClass="btn"
@@ -235,7 +246,10 @@
 								<loc:message name="actionNextInstructor" />
 							</html:submit>
 						</logic:notEmpty>
-					</sec:authorize> &nbsp; <html:submit property="op" styleClass="btn"
+					<!-- Modified by ASU on 12 Feb 2019 begins  This change was added to hide the next and back buttons-->
+					</sec:authorize> 
+					<!-- Modified by ASU on 12 Feb 2019 ends-->
+					&nbsp; <html:submit property="op" styleClass="btn"
 						accesskey="<%=MSG.accessBackToDetail()%>"
 						title="<%=MSG.titleBackToDetail(MSG.accessBackToDetail())%>">
 						<loc:message name="actionBackToDetail" />
