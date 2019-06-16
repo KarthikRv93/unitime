@@ -3685,7 +3685,7 @@ unitime-RoomSharingWidget .legend .blank {
 .unitime-PageHeader .logo {
 	background-image: url(../images/unitime.png);
 	background-size: 100% 100%;
-	min-width: 80px;
+	min-width: 300px;
 	height: 80px;
 	margin: 5px;
 	display: inline-block;

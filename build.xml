@@ -416,7 +416,7 @@
 	</target>
 	
 	<target name="deploy" depends="check-tomcat-home">
-		<copy file="${dist.dir}/UniTime.war" todir="${env.TOMCAT_HOME}/webapps" 
+		<copy file="${dist.dir}/mathscheduler.war" todir="${env.TOMCAT_HOME}/webapps" 
 			overwrite="Yes" preservelastmodified="No" verbose="Yes" />
 	</target>
 	

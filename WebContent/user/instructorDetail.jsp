@@ -79,7 +79,6 @@
 							title="<%=MSG.titleEditInstructorPreferences(MSG.accessEditInstructorPreferences()) %>" >
 							<loc:message name="actionEditInstructorPreferences" />
 					</html:submit>
-				</sec:authorize> 
 				<logic:notEmpty name="<%=frmName%>" property="previousId">
 					<html:submit property="op" 
 							styleClass="btn" 
@@ -96,6 +95,7 @@
 							<loc:message name="actionNextInstructor" />
 					</html:submit> 
 				</logic:notEmpty>
+				</sec:authorize>
 				<tt:back styleClass="btn" 
 					name="<%=MSG.actionBackInstructorDetail()%>" 
 					title="<%=MSG.titleBackInstructorDetail(MSG.accessBackInstructorDetail())%>" 
@@ -396,7 +396,6 @@
 							title="<%=MSG.titleEditInstructorPreferences(MSG.accessEditInstructorPreferences()) %>" >
 							<loc:message name="actionEditInstructorPreferences" />
 					</html:submit>
-				</sec:authorize> 
 				<logic:notEmpty name="<%=frmName%>" property="previousId">
 					<html:submit property="op" 
 							styleClass="btn" 
@@ -413,6 +412,7 @@
 							<loc:message name="actionNextInstructor" />
 					</html:submit> 
 				</logic:notEmpty>
+				</sec:authorize>
 				<tt:back styleClass="btn" 
 					name="<%=MSG.actionBackInstructorDetail()%>" 
 					title="<%=MSG.titleBackInstructorDetail(MSG.accessBackInstructorDetail())%>" 
